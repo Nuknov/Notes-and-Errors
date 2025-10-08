@@ -1,0 +1,70 @@
+Downloading: Kali Linux Rolling
+Installing: Kali Linux Rolling
+WSL2 is not supported with your current machine configuration.
+Please enable the "Virtual Machine Platform" optional component and ensure virtualization is enabled in the BIOS.
+
+PS C:\WINDOWS\system32> wsl --set-version kali-linux 1
+>>
+There is no distribution with the supplied name.
+Error code: Wsl/Service/WSL_E_DISTRO_NOT_FOUND
+PS C:\WINDOWS\system32>
+
+Now follow the following commands:
+1 - 
+wsl --list --verbose
+wsl --list --online
+
+2 - 
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+3 - 
+wsl --set-default-version 1 # To force the WSL shift to 1
+
+4 - 
+wsl --install -d kali-linux # BOOM YOU HAVE THE KALI LINUX
+
+————————————————————————————————————————————————————————————————————————
+
+What if we have this after the wsl installation?
+PS C:\WINDOWS\system32> wsl --install -d kali-linux
+>>
+Downloading: Kali Linux Rolling
+Installing: Kali Linux Rolling
+Distribution successfully installed. It can be launched via 'wsl.exe -d kali-linux'
+Launching kali-linux...
+Waiting for systemd to start...
+Warning: timed out waiting for systemd to start
+Please create a default Kali WSL user. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: kali
+New password:
+Retype new password:
+passwd: password updated successfully
+usermod: no changes
+<3>WSL (11 - SessionLeader) ERROR: SendMessage:131: Failed to write message LxInitOobeResult. Channel: OOBE
+<3>WSL (11) ERROR: Broken pipe @C:/__w/1/s/src/shared/inc\SocketChannel.h:132 (SendMessage)
+<3>WSL (11 - SessionLeader) ERROR: CreateProcessCommon:805: Create process failed
+
+
+
+
+Solution: just type wsl and run.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
