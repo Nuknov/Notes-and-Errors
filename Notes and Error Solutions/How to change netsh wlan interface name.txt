@@ -1,0 +1,32 @@
+Step: 01
+netsh wlan export profile name="My Network" folder="C:\Users\<interface_name>\Desktop"
+This will create My Network.xml
+
+
+Step: 02
+My Network.xml
+
+Go to Desktop
+Open the exported .xml in Notepad
+Find this line:
+<name>My Network.xml</name>
+Change it to:
+<name>Россия</name>
+Save it.
+
+
+
+
+Step: 03
+Delete the profile
+netsh wlan delete profile name="My Network"
+
+
+Step: 04
+Import the new name by using this:
+netsh wlan add profile filename="C:\Users\<interface_name>\Desktop\My Network.xml"
+
+
+Step: 05
+Now, let's see does it actually changed.
+netsh wlan show profile
